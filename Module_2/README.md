@@ -1,0 +1,1 @@
+Compose a program that in a function, asks for two positive integers and returns True if either evenly divides the other. The function should keep asking for entries if the wrong ones are entered. The result (boolean) should be displayed in the calling function.
