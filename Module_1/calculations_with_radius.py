@@ -20,6 +20,8 @@ sleep(1.0)
 
 # confirm user input of radius
 print(f"You entered {radius} as the radius, so let's get started. \n")
+#txt = "You gave {:.3f} as the radius"
+#print(txt.format(radius))
 sleep(1.0)
 
 # calculate circumference and print results
@@ -34,7 +36,9 @@ sleep(1.5)
 # calculate area and print results
 def calc_area():
     area = math.pi*radius**2
+    #area_txt = "The area of a circle with a radius of {:.3f} is {:.7}"
     print(f"The area of a circle with a radius of {radius} is {area} \n")
+    #print(area_txt.format(radius, area))
 
 calc_area()
 sleep(1.5)
