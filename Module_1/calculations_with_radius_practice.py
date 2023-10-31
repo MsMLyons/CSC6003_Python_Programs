@@ -1,7 +1,8 @@
 """
-File: calculations__with_radius
+File: calculations_with_radius_practice
 Author: Marki Lyons
 Course: Foundations in Programming Fall 2023
+Module: 1
 Date Created: 2023-10-29
 Date Updated: 2023-10-31
 Description: This is a program that will calculate and display the circumference and area of a circle, 

@@ -1,0 +1,46 @@
+"""
+File: lyonsm_module_1_algorithm
+Author: Marki Lyons
+Course: Foundations in Programming Fall 2023
+Module: 1
+Date Created: 2023-10-29
+Date Updated: 2023-10-31
+Description: This is an algorithm to plan a program that will calculate and display the circumference and area of a circle, as well as the volume of a sphere, based on user input of a radius.
+
+"""
+Step 1
+- Import the math module
+- Ask for the user to input a radius
+	- Assign user input to the variable "radius"	
+	- Example:
+		radius = float(input("Please enter a radius for a circle: "))
+
+Step 2
+- Create a function to calculate the circumference of the circle based on the radius
+- Function name: calc_circumference
+	- Formula: C = 2πr
+	- Translate the formula to pythonic code
+	- Assign the formula to the variable "circumference"
+	- Example:
+		circumference = 2 * math.pi * radius
+- Call the function and print the formatted output
+
+Step 3
+- Create a function to calculate the area of the circle based on the radius
+- Function name: calc_area
+	- Formula: A = πr**2
+	- Translate the formula to pythonic code
+	- Assign the formula to the variable "area"
+	- Example:
+		area = math.pi * radius ** 2
+- Call the function and print the formatted output
+
+Step 4
+- Create a function to calculate the volume of a sphere based on the radius
+- Function name: calc_volume
+	- Formula: V = 4/3 πr**3
+	- Translate the formula to pythonic code
+	- Assign the formula to the variable "volume"
+	- Example:
+		volume = 4/3 * math.pi * radius ** 3
+- Call the function and print the formatted output
