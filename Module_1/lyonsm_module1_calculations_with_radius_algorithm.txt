@@ -1,14 +1,19 @@
 """
 File: lyonsm_module1_calculations__with_radius_algorithm
 Author: Marki Lyons
-Date: 2023-10-29
+Course: Foundations in Programming Fall 2023
+Date Created: 2023-10-29
+Date Updated: 2023-10-31
 Description: This is an algorithm to plan a program that will calculate and display the circumference and area of a circle, as well as the volume of a sphere, based on user input of a radius.
 
 """
-Question: Headers ok?
+Question: Headers ok? -- rubric: Program output includes all of the appropriate headers and comments
+--> use docstrings and take out too simple comments
 Question: Algo ok?
 Question: Code ok?
 Question: How do we document resources / example code consulted?
+https://www.w3schools.com/python/ref_string_format.asp
+https://www.w3schools.com/python/trypython.asp?filename=demo_string_placeholder15
 
 Step 1
 - Import the math module
