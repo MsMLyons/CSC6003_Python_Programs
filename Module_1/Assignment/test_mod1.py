@@ -12,8 +12,7 @@ class TestCalculations(unittest.TestCase):
         self.assertEqual(result, None)
 
     def test_calc_volume(self):
-        result = lyonsm_module_1.calc_volume()
-        self.assertEqual(result, None)
+        self.assertEqual(lyonsm_module_1.calc_volume(), None)
 
 
 if __name__ == '__main__':

@@ -14,26 +14,27 @@ import math
 radius = float(input("Please enter a radius: \n\n"))
 print()
 
-def calc_circumference():
-    """ Circumference Function """
-    circumference = 2*math.pi*radius
-    circumference_txt = "The circumference of a circle with a radius of {:.3f} is {:.7} \n"
-    print(circumference_txt.format(radius, circumference))
+if radius > 0: 
+    def calc_circumference():
+        """ Circumference Function """
+        circumference = 2*math.pi*radius
+        circumference_txt = "The circumference of a circle with a radius of {:.3f} is {:.7} \n"
+        print(circumference_txt.format(radius, circumference))        
 
-calc_circumference()
+    def calc_area():
+        """ Area Function """
+        area = math.pi*radius**2
+        area_txt = "The area of a circle with a radius of {:.3f} is {:.7} \n"
+        print(area_txt.format(radius, area))    
 
-def calc_area():
-    """ Area Function """
-    area = math.pi*radius**2
-    area_txt = "The area of a circle with a radius of {:.3f} is {:.7} \n"
-    print(area_txt.format(radius, area))
+    def calc_volume():
+        """ Volume Function """
+        volume = 4/3*math.pi*radius**3
+        volume_text = "The volume of a sphere with a radius of {:.3f} is {:.7} \n"
+        print(volume_text.format(radius, volume))
 
-calc_area()
-
-def calc_volume():
-    """ Volume Function """
-    volume = 4/3*math.pi*radius**3
-    volume_text = "The volume of a sphere with a radius of {:.3f} is {:.7} \n"
-    print(volume_text.format(radius, volume))
-
-calc_volume()
+    calc_circumference()
+    calc_area()
+    calc_volume()
+else:
+    print("Please try again using a value greater than zero.")

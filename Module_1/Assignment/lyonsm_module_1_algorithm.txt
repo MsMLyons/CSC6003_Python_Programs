@@ -16,6 +16,11 @@ Step 1
 		radius = float(input("Please enter a radius for a circle: "))
 
 Step 2
+- Check if the given input is greater than zero
+	- If so, continue with calculations
+	- If not, prompt the user to try again
+
+Step 3
 - Create a function to calculate the circumference of the circle based on the radius
 - Function name: calc_circumference
 	- Formula: C = 2πr
@@ -25,7 +30,7 @@ Step 2
 		circumference = 2 * math.pi * radius
 - Call the function and print the formatted output
 
-Step 3
+Step 4
 - Create a function to calculate the area of the circle based on the radius
 - Function name: calc_area
 	- Formula: A = πr**2
@@ -35,7 +40,7 @@ Step 3
 		area = math.pi * radius ** 2
 - Call the function and print the formatted output
 
-Step 4
+Step 5
 - Create a function to calculate the volume of a sphere based on the radius
 - Function name: calc_volume
 	- Formula: V = 4/3 πr**3
