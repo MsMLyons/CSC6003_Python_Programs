@@ -1,0 +1,55 @@
+"""
+File: lyonsm_module_2_algorithm.txt
+Author: Marki Lyons
+Course: Foundations in Programming Fall 2023
+Module: 2
+Date Created: 2023-11-05
+Date Updated: 2023-11-06
+
+Description: This program asks the user for two 
+positive integers and returns True if either 
+evenly divides the other. If neither value
+evenly divides the other, or the user enters
+a negative number, the program continues to
+prompt the user for new values. 
+
+"""
+Function 1 - is_evenly_divided()
+
+Step 1
+- Create a function to prompt the user for 2 positive integers
+- Use a while loop to control the flow of the prompt
+    - Prompt for two positive integers
+    - Use int() to convert values to integers
+    - Store the integers in variables num1 & num2
+
+Step 2
+- Given two positive integers, evaluate if they divide evenly
+    - Within the while loop:
+        - Use if/else and and/or operators for conditions and comparisons
+        - If the integers are greater than zero, check:
+            - If num1 / num2 AND num2 / num1 result in remainders
+                - Let the user know the integers do not divide evenly
+                - Prompt again for new integer values
+            - If num1 / num2 OR num2 / num1 do not result in remainders
+                - Let the user know at least one integer evenly divides the other
+                - Return Boolean value: True
+                - Exit while loop
+
+Step 3
+- Continuation of if/else statement
+- Given a negative integer or zero, print "Invalid entry" message
+    - Loop through the prompt again until valid input that divides evenly is entered
+
+
+Function 2 - main()
+
+Step 1
+- Create a new function to call the is_evenly_divided function and print the result
+
+Step 2
+- Store the output from is_evenly_divided in a variable called "result"
+- Print the result variable output
+    
+Step 3
+- Call the function
