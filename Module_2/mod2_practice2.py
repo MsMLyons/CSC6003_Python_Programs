@@ -1,19 +1,3 @@
-"""
-File: lyonsm_module_2.py
-Author: Marki Lyons
-Course: Foundations in Programming Fall 2023
-Module: 2
-Date Created: 2023-11-05
-Date Updated: 2023-11-06
-
-Description: This program asks the user for two 
-positive integers and returns True if either 
-evenly divides the other. If neither value
-evenly divides the other, or the user enters
-a negative number, the program continues to
-prompt the user for new values. 
-
-"""
 def is_evenly_divided():
     ''' Function to prompt the user for positive integers and evaluate if they divide evenly '''
     
@@ -35,7 +19,6 @@ def is_evenly_divided():
 
 def main():
     ''' Function to find and print the result of the is_evenly_divided function '''
-    
-    result = is_evenly_divided()
-    print(result)
+        
+    print(is_evenly_divided())
 main()
