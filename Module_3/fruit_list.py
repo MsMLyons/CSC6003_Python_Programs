@@ -77,3 +77,10 @@ print("banana" in best_fruits)
 # output --> False 
 print("kiwi" in best_fruits)
 # output --> True
+
+# list comprehension
+# extracting initial letters from each word in the list
+fruits = ["apple", "grape", "pomegranate", "mango"]
+initials = [fruit[0] for fruit in fruits]
+print(initials)
+# output --> ['a', 'g', 'p', 'm']
