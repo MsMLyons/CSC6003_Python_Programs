@@ -1,0 +1,74 @@
+""" 
+File: lyonsm_module_3_algorithm.txt
+Author: Marki Lyons
+Course: Foundations in Programming Fall 2023
+Module: 3
+Date Created: 2023-11-12
+Date Updated: 2023-11-14
+
+Description: This program prompts the user to enter
+two arrays. The arrays are converted to lists and
+used as both arrays and lists to manipulate the
+elements/values in each. The objectives include:
+calculating sums and averages, sorting, removing
+duplicates, and finding minimum and maximum values.
+"""
+Function 1 - get_arrays()
+Request user input of two arrays of the same length
+    - Convert arrays to lists for later operations
+    - Print the arrays as lists for easy comparison with other operations
+
+Note: For most of the functions, array 1, array 2, or even both arrays could be used;
+      For simplicity, array 1 is mostly favored in the code, unless two arrays are required
+
+Function 2 - calculate_sum()
+Take in array 1
+    - Use the sum() function to calculate the sum of the elements in the array
+    - Print the result of the calculation
+
+Function 3 - find_max()
+Take in array 1
+    - Use a for loop to find the maximum value in the array
+    - Print the result (printed in main function after find_max function call)
+    
+Function 4 - find_min()
+Take in array 1
+    - Use a for loop to find the minimum value in the array
+    - Print the result (printed in main function after find_min function call)
+
+Function 5 - sum_elements()
+Take in arrays 1 and 2 
+    - Create a list, "array3" to store the results of the calculation
+    - Calculate the sums of the individual corresponding elements of both arrays,
+      using list comprehension
+    - Print the new array3 list
+
+Function 6 - remove_duplicates()
+Take in array 1
+    - Create a new array, "array4", to store the non-duplicate values from array 1
+    - Loop through array 1 to find non-duplicate values and append them to array 4
+    - Convert the new array to a list for better visual representation when printing
+    - Print the new array/list of non-duplicate values
+    - Note: there will only be a difference between array 1 and array 4 if duplicate
+      values were entered as input through function 1
+
+Function 7 - sort_values()
+Take in my_array1 (list)
+    - Sort the list; increasing order is default
+    - Reverse sort the list for decreasing order
+    - Print the resulting sorted list
+
+Function 8 - is_increasing_order()
+Take in my_array2 (list)
+    - Compare my_array2 list, which reflects the array2 input, to the sorted version of
+      the list
+    - Print a message based on whether the list is sorted in increasing order (default)
+      or non-decreasing order 
+
+Function 9 - calculate_average()
+Take in array1
+    - Calculate the average by dividing the sum of its elements by its length
+    - Print the results of the calculations
+
+Function 10 - main()
+Group and call the other functions of the program
