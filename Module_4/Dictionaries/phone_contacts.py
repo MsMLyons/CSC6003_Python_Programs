@@ -5,6 +5,7 @@
     # Retrieve the phone number of a given contact.
     # Print all contacts in the phonebook
 
+# initialize dictionary
 phonebook = {}
 
 # add a contact to the phonebook
