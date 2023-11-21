@@ -1,0 +1,51 @@
+""" 
+File: lyonsm_module_4_algorithm.py
+Author: Marki Lyons
+Course: Foundations in Programming Fall 2023
+Module: 3
+Date Created: 2023-11-20
+Date Updated: 2023-11-21
+
+Description: 
+
+This program creates two classes. The Rectangle class is the 
+parent class, from which the Parallelepiped child class inherits 
+the attributes of length and width. 
+
+The Rectangle class initializes these attributes via user input, 
+then uses the input data to calculate the perimeter and area of a 
+rectangle. Before passing that information onto its child class, the 
+results of the input and calculations are displayed for the user. 
+
+The Parallelepiped class takes advantage of inheritance by re-
+utilizing user input of length and width, then prompts the user for
+the shape's height. With this data, it calculates the volume of the
+shape and prints the results for the user. 
+"""
+
+Step 1: Create the Rectangle() class
+1. Use the init method to initialize the class
+    - print a greeting message to the user about the purpose
+      of the class
+    - add the length and width attributes
+    - assign the length and width attributes to user input    
+2. Create a method to calculate the perimeter of a rectangle
+3. Create a method to calculate the area of a rectangle
+4. Create a method to display the user input of length and width, 
+   as well as the calculated results of perimeter and area
+
+Step 2: Create a Parallelepiped() class that inherits from the
+        Rectangle class
+1. Initialize the class
+    - print a message to the user about the purpose of the new
+      functionality
+    - reassign the length and width attributes to utilize them
+      from the parent class
+    - add the height attribute and assign it to user input
+2. Create a method to calculate the volume of the parallelepiped
+   and print the result
+
+Step 3: Create and call the main function
+
+Step 4: Add docstrings to each class and method to describe
+        the functionality of each part of the program
