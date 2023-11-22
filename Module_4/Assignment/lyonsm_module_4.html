@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module lyonsm_module_4</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">lyonsm_module_4</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cmsmar%5Conedrive%5Cdesktop%5Cmerrimack%5C2%20-%20foundations%20in%20programming%20-%20csc6003%5Ccsc6003_python_programs%5Cmodule_4%5Cassignment%5Clyonsm_module_4.py">c:\users\msmar\onedrive\desktop\merrimack\2 - foundations in programming - csc6003\csc6003_python_programs\module_4\assignment\lyonsm_module_4.py</a></td></tr></table>
+    <p><span class="code">File:&nbsp;lyonsm_module_4.py<br>
+Author:&nbsp;Marki&nbsp;Lyons<br>
+Course:&nbsp;Foundations&nbsp;in&nbsp;Programming&nbsp;Fall&nbsp;2023<br>
+Module:&nbsp;3<br>
+Date&nbsp;Created:&nbsp;2023-11-20<br>
+Date&nbsp;Updated:&nbsp;2023-11-21<br>
+&nbsp;<br>
+Description:&nbsp;<br>
+&nbsp;<br>
+This&nbsp;program&nbsp;creates&nbsp;two&nbsp;classes.&nbsp;The&nbsp;<a href="#Rectangle">Rectangle</a>&nbsp;class&nbsp;is&nbsp;the&nbsp;<br>
+parent&nbsp;class,&nbsp;from&nbsp;which&nbsp;the&nbsp;<a href="#Parallelepiped">Parallelepiped</a>&nbsp;child&nbsp;class&nbsp;inherits&nbsp;<br>
+the&nbsp;attributes&nbsp;of&nbsp;length&nbsp;and&nbsp;width.&nbsp;<br>
+&nbsp;<br>
+The&nbsp;<a href="#Rectangle">Rectangle</a>&nbsp;class&nbsp;initializes&nbsp;these&nbsp;attributes&nbsp;via&nbsp;user&nbsp;input,&nbsp;<br>
+then&nbsp;uses&nbsp;the&nbsp;input&nbsp;data&nbsp;to&nbsp;calculate&nbsp;the&nbsp;perimeter&nbsp;and&nbsp;area&nbsp;of&nbsp;a&nbsp;<br>
+rectangle.&nbsp;Before&nbsp;passing&nbsp;that&nbsp;information&nbsp;onto&nbsp;its&nbsp;child&nbsp;class,&nbsp;the&nbsp;<br>
+results&nbsp;of&nbsp;the&nbsp;input&nbsp;and&nbsp;calculations&nbsp;are&nbsp;displayed&nbsp;for&nbsp;the&nbsp;user.&nbsp;<br>
+&nbsp;<br>
+The&nbsp;<a href="#Parallelepiped">Parallelepiped</a>&nbsp;class&nbsp;takes&nbsp;advantage&nbsp;of&nbsp;inheritance&nbsp;by&nbsp;re-<br>
+utilizing&nbsp;user&nbsp;input&nbsp;of&nbsp;length&nbsp;and&nbsp;width,&nbsp;then&nbsp;prompts&nbsp;the&nbsp;user&nbsp;for<br>
+the&nbsp;shape's&nbsp;height.&nbsp;With&nbsp;this&nbsp;data,&nbsp;it&nbsp;calculates&nbsp;the&nbsp;volume&nbsp;of&nbsp;the<br>
+shape&nbsp;and&nbsp;prints&nbsp;the&nbsp;results&nbsp;for&nbsp;the&nbsp;user.</span></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="lyonsm_module_4.html#Rectangle">Rectangle</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="lyonsm_module_4.html#Parallelepiped">Parallelepiped</a>
+</dt></dl>
+</dd>
+</dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Parallelepiped">class <strong>Parallelepiped</strong></a>(<a href="lyonsm_module_4.html#Rectangle">Rectangle</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">The&nbsp;<a href="#Parallelepiped">Parallelepiped</a>&nbsp;class&nbsp;inherits&nbsp;from&nbsp;the&nbsp;<a href="#Rectangle">Rectangle</a>&nbsp;class.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="lyonsm_module_4.html#Parallelepiped">Parallelepiped</a></dd>
+<dd><a href="lyonsm_module_4.html#Rectangle">Rectangle</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Parallelepiped-__init__"><strong>__init__</strong></a>(self)</dt><dd><span class="code">Reuses&nbsp;previous&nbsp;user&nbsp;input&nbsp;and&nbsp;prompts&nbsp;for&nbsp;the&nbsp;height&nbsp;of&nbsp;the&nbsp;parallelepiped</span></dd></dl>
+
+<dl><dt><a name="Parallelepiped-volume"><strong>volume</strong></a>(self)</dt><dd><span class="code">This&nbsp;method&nbsp;calculates&nbsp;and&nbsp;prints&nbsp;the&nbsp;volume&nbsp;of&nbsp;the&nbsp;parallelepiped</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="lyonsm_module_4.html#Rectangle">Rectangle</a>:<br>
+<dl><dt><a name="Parallelepiped-area"><strong>area</strong></a>(self)</dt><dd><span class="code">Calculates&nbsp;the&nbsp;area&nbsp;of&nbsp;the&nbsp;rectangle</span></dd></dl>
+
+<dl><dt><a name="Parallelepiped-display"><strong>display</strong></a>(self)</dt><dd><span class="code">Displays&nbsp;the&nbsp;length,&nbsp;width,&nbsp;perimeter&nbsp;and&nbsp;area&nbsp;of&nbsp;a&nbsp;rectangle&nbsp;<a href="builtins.html#object">object</a></span></dd></dl>
+
+<dl><dt><a name="Parallelepiped-perimeter"><strong>perimeter</strong></a>(self)</dt><dd><span class="code">Calculates&nbsp;the&nbsp;perimeter&nbsp;of&nbsp;the&nbsp;rectangle</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="lyonsm_module_4.html#Rectangle">Rectangle</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Rectangle">class <strong>Rectangle</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Rectangle">Rectangle</a>&nbsp;class&nbsp;with&nbsp;length&nbsp;and&nbsp;width&nbsp;attributes.&nbsp;This&nbsp;class&nbsp;calculates&nbsp;the&nbsp;<br>
+perimeter&nbsp;and&nbsp;area&nbsp;of&nbsp;a&nbsp;rectangle&nbsp;based&nbsp;on&nbsp;user&nbsp;input&nbsp;of&nbsp;length&nbsp;and&nbsp;width.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Rectangle-__init__"><strong>__init__</strong></a>(self)</dt><dd><span class="code">Prompts&nbsp;the&nbsp;user&nbsp;for&nbsp;input&nbsp;and&nbsp;creates&nbsp;a&nbsp;rectangle</span></dd></dl>
+
+<dl><dt><a name="Rectangle-area"><strong>area</strong></a>(self)</dt><dd><span class="code">Calculates&nbsp;the&nbsp;area&nbsp;of&nbsp;the&nbsp;rectangle</span></dd></dl>
+
+<dl><dt><a name="Rectangle-display"><strong>display</strong></a>(self)</dt><dd><span class="code">Displays&nbsp;the&nbsp;length,&nbsp;width,&nbsp;perimeter&nbsp;and&nbsp;area&nbsp;of&nbsp;a&nbsp;rectangle&nbsp;<a href="builtins.html#object">object</a></span></dd></dl>
+
+<dl><dt><a name="Rectangle-perimeter"><strong>perimeter</strong></a>(self)</dt><dd><span class="code">Calculates&nbsp;the&nbsp;perimeter&nbsp;of&nbsp;the&nbsp;rectangle</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
