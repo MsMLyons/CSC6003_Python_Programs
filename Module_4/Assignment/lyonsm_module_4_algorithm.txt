@@ -47,7 +47,11 @@ Step 2: Create a Parallelepiped class that inherits from the
 
 Step 3: Create and call the main function
 
-Step 4: Create documentation
+Step 4: Create unit tests
+1. Use mock and side effects to account for user input
+2. Test the perimeter, area, and volume methods 
+
+Step 5: Create documentation
 1. Add docstrings to each class and method to describe the 
    functionality of each part of the program
 2. Create an html file using pydocs
