@@ -31,11 +31,11 @@ class Parallelepiped(Rectangle):
         It reuses previous user input and prompts for the height
         of the parallelepiped to calculate the volume of the shape.
     """
-    def __init__(self):
+    def __init__(self, rectangle):
         print("\nGreat! Now let's calculate the volume of a parallelepiped.")
         print("We'll base it on the same length and width of the rectangle.\n")         
-        self.length = rectangle_instance.length 
-        self.width = rectangle_instance.width        
+        self.length = rectangle.length 
+        self.width = rectangle.width        
         self.height = int(input("You just need to add the height of parallelepiped: "))
 
     def volume(self):
@@ -48,5 +48,5 @@ class Parallelepiped(Rectangle):
 if __name__ == "__main__":
     rectangle_instance = Rectangle()
     rectangle_instance.display()
-    parallelepiped = Parallelepiped()
+    parallelepiped = Parallelepiped(rectangle_instance)
     parallelepiped.volume()

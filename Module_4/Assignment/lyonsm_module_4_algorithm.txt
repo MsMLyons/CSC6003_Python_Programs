@@ -23,7 +23,7 @@ the shape's height. With this data, it calculates the volume of the
 shape and prints the results for the user. 
 """
 
-Step 1: Create the Rectangle() class
+Step 1: Create the Rectangle class
 1. Use the init method to initialize the class
     - print a greeting message to the user about the purpose
       of the class
@@ -34,7 +34,7 @@ Step 1: Create the Rectangle() class
 4. Create a method to display the user input of length and width, 
    as well as the calculated results of perimeter and area
 
-Step 2: Create a Parallelepiped() class that inherits from the
+Step 2: Create a Parallelepiped class that inherits from the
         Rectangle class
 1. Initialize the class
     - print a message to the user about the purpose of the new
