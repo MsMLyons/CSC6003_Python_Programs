@@ -13,7 +13,7 @@ print(rectangle_area)
 
 # OOP approach
 class Rectangle:
-    def __init(self, length, width):
+    def __init__(self, length, width):
         self.length = length
         self.width = width
 
