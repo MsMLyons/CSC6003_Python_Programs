@@ -75,7 +75,7 @@ class Nurse(Personnel):
     """ Create a child class of Personnel for Nurse with inherited attributes and methods. This class
         also displays the ranking of the nurse instantiated through the Nurse object
     """
-    def __init__(self, name, age, hourly_rate, rank=0):
+    def __init__(self, name, age, hourly_rate, rank):
         Personnel.__init__(self, name, age, hourly_rate)
         self.rank = rank 
 
@@ -85,7 +85,7 @@ class Nurse(Personnel):
         """
         Personnel.display(self)
         print(f"\nNurse {self.name} is {self.age} years old, and makes ${self.hourly_rate} an hour.")
-        print(f"Nurse {self.name} is ranked #{self.rank} amongst the nursing staff.")
+        print(f"Nurse {self.name} is ranked {self.rank} amongst the nursing staff.")
 
 # instantiate a doctor object
 new_doctor = Doctor("Alicia", 27, 300, "rheumatology")
@@ -97,5 +97,5 @@ new_surgeon.display_surgeon()
 new_surgeon.board_certification(board_certified=False)
 
 # instantiate a nurse object
-new_nurse = Nurse("Thomas", 38, 150, rank=3)
+new_nurse = Nurse("Thomas", 38, 150, rank="#3")
 new_nurse.display_nurse()
