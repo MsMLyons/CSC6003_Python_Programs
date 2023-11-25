@@ -14,6 +14,7 @@ balance (float): The current balance of the bank account.
 Implement methods for depositing, withdrawing, checking 
 balance, and displaying the account details.
 """
+# see module 5 practice bank_account.py
 
 class BankAccount:
     def __init__(self, account_number, balance):
