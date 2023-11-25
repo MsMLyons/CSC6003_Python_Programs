@@ -1,5 +1,5 @@
 """ 
-File: lyonsm_module_5.py
+File: lyonsm_module_5_algorithm.txt
 Author: Marki Lyons
 Course: Foundations in Programming Fall 2023
 Module: 5
