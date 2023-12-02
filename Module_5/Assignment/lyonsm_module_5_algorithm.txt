@@ -4,7 +4,7 @@ Author: Marki Lyons
 Course: Foundations in Programming Fall 2023
 Module: 5
 Date Created: 2023-11-25
-Date Updated: 2023-11-27
+Date Updated: 2023-11-28
 
 Description: 
 
@@ -23,19 +23,19 @@ instance of each object.
 """
 
 Step 1: Create the parent class Personnel
-    - instantiate the class with the __init__ method
+    - construct the class with the __init__ method
     - add required attributes: name, age, hourly rate
     - add required method: display
 
 Step 2: Create the child class Doctor
-    - instantiate with inherited attributes: name, age, hourly rate 
+    - construct the class with inherited attributes: name, age, hourly rate 
     - add required new attribute: specialty
     - add display_doctor method that inherits properties from the 
       display method in the parent class Personnel
       - display all inherited and new attributes
 
 Step 3: Create the child class Surgeon
-    - instantiate with inherited attributes: name, age, hourly rate 
+    - construct the class with inherited attributes: name, age, hourly rate 
     - add required new attribute board_certified via a method which
       checks for board certification
     - add display_surgeon method that inherits properties from the 
@@ -43,7 +43,7 @@ Step 3: Create the child class Surgeon
       - display all inherited and new attributes
 
 Step 4: Create the child class Nurse
-    - instantiate with inherited attributes: name, age, hourly rate 
+    - construct the class with inherited attributes: name, age, hourly rate 
     - add required new attribute: rank
     - add display_nurse method that inherits properties from the 
       display method in the parent class Personnel
@@ -51,5 +51,6 @@ Step 4: Create the child class Nurse
 
 Step 5: Create objects for each child class
     - instantiate objects with example data
+    - nest them in a main function
     - test each display method by calling them via the example
       objects

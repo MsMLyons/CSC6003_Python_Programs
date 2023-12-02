@@ -4,7 +4,7 @@ Author: Marki Lyons
 Course: Foundations in Programming Fall 2023
 Module: 5
 Date Created: 2023-11-25
-Date Updated: 2023-11-27
+Date Updated: 2023-11-28
 
 Description: 
 
@@ -87,15 +87,17 @@ class Nurse(Personnel):
         print(f"\nNurse {self.name} is {self.age} years old, and makes ${self.hourly_rate} an hour.")
         print(f"Nurse {self.name} is ranked {self.rank} amongst the nursing staff.")
 
-# instantiate a doctor object
-new_doctor = Doctor("Alicia", 27, 300, "rheumatology")
-new_doctor.display_doctor()
+def main():
+    # instantiate a doctor object
+    new_doctor = Doctor("Alicia", 27, 300, "rheumatology")
+    new_doctor.display_doctor()
 
-# instatiate a surgeon object
-new_surgeon = Surgeon("Patricia", 32, 345)
-new_surgeon.display_surgeon()
-new_surgeon.board_certification(board_certified=False)
+    # instatiate a surgeon object
+    new_surgeon = Surgeon("Patricia", 32, 345)
+    new_surgeon.display_surgeon()
+    new_surgeon.board_certification(board_certified=False)
 
-# instantiate a nurse object
-new_nurse = Nurse("Thomas", 38, 150, rank="#3")
-new_nurse.display_nurse()
+    # instantiate a nurse object
+    new_nurse = Nurse("Thomas", 38, 150, rank="#3")
+    new_nurse.display_nurse()
+main()
