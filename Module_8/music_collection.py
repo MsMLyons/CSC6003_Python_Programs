@@ -12,13 +12,26 @@ Description: You have been tasked with creating a program to organize a music co
 """
 
 class Music_Collection:
-    def __init__(self, genre, song_title, artist):
-        self.genre = genre
-        self.song_title = song_title
+    def __init__(self, title, artist):        
+        self.title = title
         self.artist = artist
 
-song1 = Music_Collection("pop", "dance dance", "never dance again") 
-print(f"My favorite music genre is {song1.genre}. \nMy favorite song is {song1.song_title} by {song1.artist}.")   
+    def add_song(self):
+        # add_song = Music_Collection.dict()        
+        self.title = input("Please enter the title of a song: ")
+        self.artist = input("Please enter the artist who performs that song: ")
+        # add_song.append(self.title, self.artist)
+
+        # for k, v in self.title.iteritems():
+        #     print(k, v)
+
+        # for k, v in self.artist.items():
+        #     print(k, v)
+        
+
+# song1 = Music_Collection("dance dance", "never dance again") 
+# print(f"My favorite song is {song1.title} by {song1.artist}.") 
+new_song = Music_Collection.add_song()
         
 
 
