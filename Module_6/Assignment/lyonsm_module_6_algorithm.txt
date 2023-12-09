@@ -1,22 +1,68 @@
 """ 
-File: lyonsm_module_6_algorithm.txt
+File: lyonsm_module_6.py
 Author: Marki Lyons
 Course: Foundations in Programming Fall 2023
 Module: 6
 Date Created: 2023-11-25
-Date Updated: 2023-x-y
+Date Updated: 2023-12-05
 
-Description: 
+Description: This program makes use of a dictionary to store a
+collection of song titles and their corresponding artists. The
+user is prompted to input a song title and an artist. They are
+then prompted to update and delete songs of their choosing.
+Finally, the program displays all songs entered by the user.
 """
-
-From the instructions:
 
 Music Collection Organizer
 
-Description: You have been tasked with creating a program to organize a music collection using a dictionary in Python. The program should provide the following functionality:
+Step 1 - Music Collection Class
+1. Create a class to initialize the music collection
+2. The constructor should contain an empty dictionary 
+   to store user input of song titles and artists
+3. Add song function
+    - ask how many songs the user would like to enter
+    - ask for song titles and artists
+    - add the song details to the music collection dictionary
+    with key, value pairs (title, artist)
+    - print confirmation of song entry into collection
+    - if the user enters an invalid number of possible
+    entries, they receive an error message and the program
+    exits immediately
+4. Get song function
+    - ask the user if they would like to retrieve a song
+    - if input is invalid (y/n expected), user receives 
+    an error message
+    - if user chooses yes, they are prompted for the song
+    to retrieve via its title
+    - if the title/artist are not existant in the collection,
+    warn the user that the song does not exist in the collection
+    - if the song exists, retrieve it and print confirmation 
+    message
+5. Update song function
+    - ask the user if they would like to update a song
+    - if input is invalid (y/n expected), user receives 
+    an error message
+    - if user chooses yes, they are prompted for the song
+    to update via its title
+    - if the title is non-existant in the collection, the 
+    user receives an error message
+    - if the song exists, the user can update the artist
+6. Delete song function
+    - ask the user if they would like to delete a song
+    - if input is invalid (y/n expected), user receives 
+    an error message
+    - if user chooses yes, they are prompted for the song
+    to delete via its title
+    - if the title is non-existant in the collection, the 
+    user receives an error message
+    - if the song exists, the user can delete it
+7. Display song function
+    - if there are no songs to display, show a message 
+    that declares the collection empty
+    - if there are songs in the collection, display them
+    for the user
 
-1. Add a song: Prompt the user to enter the song title and artist, and add it to the music collection.
-2. Retrieve song details: Prompt the user to enter a song title, and display the corresponding artist from the music collection.
-3. Update song details: Prompt the user to enter a song title, and update the artist information in the music collection.
-4. Delete a song: Prompt the user to enter a song title, and remove the corresponding song from the music collection.
-5. Display all songs: Display all songs in the music collection.
+Step 2 - Main function
+1. Instantiate the music collection
+2. Print welcome messages to the user
+3. Call functions on the instantiated collection

@@ -12,27 +12,71 @@ Description: You have been tasked with creating a program to organize a music co
 """
 
 class Music_Collection:
-    def __init__(self, title, artist):        
-        self.title = title
-        self.artist = artist
+    def __init__(self):        
+        self.music_collection = {}
 
-    def add_song(self):
-        # add_song = Music_Collection.dict()        
-        self.title = input("Please enter the title of a song: ")
-        self.artist = input("Please enter the artist who performs that song: ")
-        # add_song.append(self.title, self.artist)
+    def add_song(self):       
+        title = input("\nPlease enter the title of a song: ")
+        artist = input("\nPlease enter the artist who performs that song: ")
+        self.music_collection[title] = artist
+        print(f"\n{title.title()} by {artist.title()} is now part of the music collection.")
 
-        # for k, v in self.title.iteritems():
-        #     print(k, v)
+    def get_song(self):
+        title = input("\nPlease enter the title of the song you'd like to retrieve from the collection: ").strip()
+        artist = self.music_collection.get(title, "\nThat song isn't part of the collection.")
+        print(f"\n{title.title()} is by {artist.title()}")
+        return artist
+    
+    def update_song(self):
+        title = input("\nPlease enter the title of the song you'd like to update: ").strip()
+        new_artist = input("\nPlease enter the artist's name: ").strip()
+        self.music_collection[title] = new_artist
+        print(f"\n{title.title()} has been updated with the new artist: {new_artist.title()}")
 
-        # for k, v in self.artist.items():
-        #     print(k, v)
-        
+    def delete_song(self):
+        response = input("\nWould you like to delete a song from the music collection? (y/n): ").strip().lower()
+        if response == "y":
+            title = input("\nPlease enter a song to delete: ").strip()
+            if title in self.music_collection:
+                del self.music_collection[title]
+                print(f"\n{title.title()} has been removed from the collection.")
+            else:
+                print("\nThat song isn't part of the collection.")
+        # else:
+        #     self.add_song()
 
-# song1 = Music_Collection("dance dance", "never dance again") 
-# print(f"My favorite song is {song1.title} by {song1.artist}.") 
-new_song = Music_Collection.add_song()
-        
+    def display_collection(self):        
+        if not self.music_collection:
+            print("\nThere are currently no songs in the music collection.")
+            print("\nThat's sad. Let's add some.")
+            self.add_song()
+        else:
+            print("\nThese are the songs in the music collection: \n")
+
+            # songs_to_add = []
+
+            for title, artist in self.music_collection.items():
+                print(f"{title.title()} by {artist.title()}")
+            #     response = input("\nWant to add more songs to the music collection? (y/n): ").strip().lower()
+            #     if response == "y":
+            #         songs_to_add.append((title, artist))
+            #     else:
+            #         print("\nOk. Maybe another day. Goodbye!")
+
+            # for title, artist in songs_to_add:
+            #     self.music_collection[title] = artist                
 
 
+collection = Music_Collection()
+print("\nWelcome to the music collection!")
 
+
+collection.display_collection()
+
+collection.add_song()
+
+collection.update_song()
+
+collection.delete_song()
+
+collection.display_collection()
