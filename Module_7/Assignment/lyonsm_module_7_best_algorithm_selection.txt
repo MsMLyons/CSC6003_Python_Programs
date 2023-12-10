@@ -1,21 +1,86 @@
 """ 
-File: lyonsm_module_7_best_algorithm_selection.txt
+File: lyonsm_module_7.py
 Author: Marki Lyons
 Course: Foundations in Programming Fall 2023
 Module: 7
-Date Created: 2023-11-25
-Date Updated: 2023-x-y
+Date Created: 2023-12-09
+Date Updated: 2023-12-10
 
-Description: 
-
-Determine which of the two algorithms chosen for this assignment is
-better at sorting the large list of random numbers generated from the
-
-XYZ method in lyonsm_module_7.py.
-
-More details here if necessary
+Description: The objective of this program is to compare 
+two sorting algorithms for their time efficiency in sorting 
+a large, randomized, dataset. The sorting algorithms chosen
+for this comparison are insertion sort and merge sort.
 """
 
-From the instructions:
+Evalutation Summary: 
 
-Can you describe, in your own words, (in less than 3 lines!), which algorithm is more efficient?
+I compared the Insertion Sort and Merge Sort algorithms. Insertion Sort was always slower than Merge Sort. Merge 
+sort has an advantage when sorting large, randomized datasets because it divides the dataset into subsets, then 
+merges them once sorted. Insertion Sort is better for almost-sorted lists since it moves one element at a time. 
+
+__________________________________________________________________________________________________________________
+
+Evaluation Example Output 1:
+
+--* Insertion Sort Results *--
+
+Insertion Sort Beginning Timestamp: 1702216083.702586
+Insertion Sort took 0.023106399923563004 seconds to run
+Insertion Sort Ending Timestamp: 1702216083.726579
+
+--* Merge Sort Results *--
+
+Merge Sort Beginning Timestamp: 1702216083.727586
+Merge Sort took 0.0013693999499082565 seconds to run
+Merge Sort Ending Timestamp: 1702216083.728587
+
+--* Comparison of Insertion Sort and Merge Sort *--
+
+The dataset included 1000 randomly generated numbers.
+Result: Insertion Sort is slower than Merge Sort.
+
+__________________________________________________________
+
+Evaluation Example Output 2:
+
+--* Insertion Sort Results *--
+
+Insertion Sort Beginning Timestamp: 1702216539.015229
+Insertion Sort took 2.489890799857676 seconds to run
+Insertion Sort Ending Timestamp: 1702216541.506727
+
+--* Merge Sort Results *--
+
+Merge Sort Beginning Timestamp: 1702216541.507777
+Merge Sort took 0.02097179996781051 seconds to run
+Merge Sort Ending Timestamp: 1702216541.529169
+
+--* Comparison of Insertion Sort and Merge Sort *--
+
+The dataset included 10000 randomly generated numbers.
+Result: Insertion Sort is slower than Merge Sort.
+
+__________________________________________________________
+
+Evaluation Example Output 3: 
+
+--* Insertion Sort Results *--
+
+Insertion Sort Beginning Timestamp: 1702216610.769122
+Insertion Sort took 276.4425627000164 seconds to run
+Insertion Sort Ending Timestamp: 1702216887.21364
+
+--* Merge Sort Results *--
+
+Merge Sort Beginning Timestamp: 1702216887.214608
+Merge Sort took 0.24719529994763434 seconds to run
+Merge Sort Ending Timestamp: 1702216887.461857
+
+--* Comparison of Insertion Sort and Merge Sort *--
+
+The dataset included 100000 randomly generated numbers.
+Result: Insertion Sort is slower than Merge Sort.
+
+__________________________________________________________
+
+Evaluation Example Output 4:

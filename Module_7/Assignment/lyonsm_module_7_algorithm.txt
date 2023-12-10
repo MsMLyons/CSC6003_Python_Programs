@@ -1,25 +1,57 @@
 """ 
-File: lyonsm_module_7_algorithm.txt
+File: lyonsm_module_7.py
 Author: Marki Lyons
 Course: Foundations in Programming Fall 2023
 Module: 7
-Date Created: 2023-11-25
-Date Updated: 2023-x-y
+Date Created: 2023-12-09
+Date Updated: 2023-12-10
 
-Description: 
+Description: The objective of this program is to compare 
+two sorting algorithms for their time efficiency in sorting 
+a large, randomized, dataset. The sorting algorithms chosen
+for this comparison are insertion sort and merge sort.
 """
 
-Empirically, take two sorting algorithms and prove (with timestamps evidence) which one is better.
+Comparison of Insertion Sort and Merge Sort Algorithms
 
-In this module, there are 5 sorting algorithms available. Write your own program to generate a large number of random numbers and sort them using any two algorithms. Add time stamps (you can use the sample program I have provided in the module contents) and prove that one algorithm is more efficient than the other one.
+Step 1: Generate a list of random numbers (dataset)
+1. Import the random module
+2. Create a function to generate a random dataset of integers
+    - use list comprehension 
+    - set the range of values from 1 to 10000000
+3. Set the dataset size by creating a variable that calls the function
+    - include the parameter (value) for the dataset size in the function 
+      call
+Note: The size of the dataset can be manipulated by changing the value
+of the parameter in #3, above. Results reported in the "best algorithm
+selection" text document were tested on datasets of 1000, 10000, and 
+100000 randomly generated integers between 1 and 1000000.
 
-Note: Unless you generate a large amount of data, you might not be able to get differentiating data.
+Step 2: Make use of the Insertion Sort algorithm from the module 7 slides
+1. The code for the algorithm can be found on slide 48
+2. Update the "number" variable to use the "dataset" variable to avoid 
+   hard-coded values 
 
-The grading will be based on the answers to the following questions:
+Step 3: Measure start, execution, and end times of the Insertion Sort algorithm
+1. Import the timeit and datetime modules
+2. Set the initializing timestamp using the start time variable 
+    - use datetime.now() to set the start time
+3. Set the execution time variable
+    - use timeit.timeit() to measure the execution time
+4. Set the ending time stamp using the end time variable
+    - use datetime.now() to set the end time
+5. Print the results of each timestamp and execution time measurement
 
-Are you able to create a large number of random numbers and keep them in a list?
-Can you feed this list to any two sorting functions (you can/should use the ones provided)?
-Did you add the time stamps to determine when you are about the call the sorting function(s) and when you finish determining the time (in milliseconds) it took to sort the data?
-Are you able to determine which algorithm is better?
-Can you describe, in your own words, (in less than 3 lines!), which algorithm is more efficient?
-Does your program follow the coding guidelines and is it commented appropriately?
+Step 4: Make use of the Merge Sort algorithm from the module 7 slides
+1. The code for the algorithm can be found on slide 52
+2. Update the "numbers" variables to use the "dataset" variable to avoid 
+   hard-coded values
+3. Update the "arr" variable to also use the "dataset" variable so the
+   dataset can be split into subsets 
+
+Step 5: Measure the start, execution, and end times of the Merge Sort algorithm
+(see Step 3)
+
+Step 6: Compare the results of each algorithms' runtime
+1. Create a function to compare the runtime results of each algorithm
+2. Print the results
