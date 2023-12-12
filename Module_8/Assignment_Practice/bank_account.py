@@ -24,59 +24,59 @@ class BankAccount:
     """
 
     def __init__(self, account_number=None, balance=0.0):               
-        self.account_number = account_number
-        self.balance = balance    
-
-    def deposit(self, amount):
-        self.balance += amount        
-                
-    def withdraw(self, amount):
-        if amount <= self.balance:
-            self.balance -= amount
-        else:
-            print("Sorry, insufficient funds for withdrawal")  
-
-    def check_balance(self):
-        return self.balance     
+        self.account_number = int(account_number)
+        self.balance = float(balance)     
         
-    def display_account_details(self):
-        print(f"Your account number is {self.account_number}")
-        print(f"The balance for your account is ${self.balance}")
-        # more details?
+    # def display_account_details(self):
+    #     print(f"Your account number is {self.account_number}")
+    #     print(f"The balance for your account is ${self.balance}")
+    #     # more details?
         
 
-class Bank(BankAccount):
+class Bank():
     """ Class to create an account with an initial balance input by the user,
     assigned to a unique account number, as well as allow for transactions.     
     """
 
-    accounts = set()    
-
     def __init__(self):
-        super().__init__()                
+        self.account_numbers = set()
+        self.account_objects = set()               
 
     def create_account(self):
         """ Take an account number as input and return the corresponding 
-            BankAccount object from the list of accounts """                   
+            BankAccount object from the list of accounts """ 
+                        
+        new_balance = float(input("How much would you like to deposit? $"))
+        print(f"You have indicated you would like to deposit ${new_balance}")
+        
         while True: 
             num = random.randint(1000000, 100000000)
-            if num not in Bank.accounts:
-                Bank.accounts.add(num)
-                self.account_number = num
-                self.balance = 0.0                          
+            if num not in self.account_numbers:
+                self.account_numbers.add(num)
+                new_account = BankAccount(num, new_balance)
+                self.account_objects.add(new_account)                                         
                 
-                print(f"\nAccount number {self.account_number} created successfully")
-                new_balance = float(input("How much would you like to deposit? $"))
-                print(f"You have indicated you would like to deposit ${new_balance}") 
+                print(f"\nAccount number {num} created successfully")
+        
 
-                return num     
+                # return num (maybe return new_account for unit testing)
+                
+    # retrieve accounts - move after create account
+    def get_account_balance(self):
+        account_number = input("To check a balance, please enter the account number: ")
+        if account_number in self.account_numbers:
+            print(f"Account number {self.account_number} has a balance of {self.balance}")
+        else:
+            print("That account number does not exist")     
     
     def deposit(self):
         """ Take an account number and amount as input and deposit the specified 
             amount into the account """
         account_number = input("Please enter your account number: ")
-        if account_number in Bank.accounts:
+        if account_number in self.accounts:
             amount = float(input("Please enter the amount you would like to deposit: $"))
+            # for account in self.account_objects:
+            #     if 
             self.balance += amount
             timestamp = datetime.now()
             time_of_deposit = timestamp.strftime("%d/%m/%Y %H:%M:%S")
@@ -98,28 +98,35 @@ class Bank(BankAccount):
         else: 
             print("Sorry, that account does not seem to exist.")
 
-    # def transfer(self, account_number, amount):
+    # def transfer(self):
     #     """ Take two account numbers and an amount as input and transfer the 
     #         specified amount from one account to another """
-    #
-    #
+    #     account_1 = input("Please enter the account number to transfer from: ")
+    #     account_2 = input("Please enter the account number to transfer to: ")
+    #     if account_1 and account_2 in Bank.accounts:
+    #         amount = float(input("Please enter the amount to transfer: $"))
+    #         account_1_balance -= amount
+    #         account_2_balance += amount
+    #         print("Transfer successful")
+    #     else:
+    #         if account_1 not in Bank.accounts:
+    #             print("Transfer failed: Initiating account not found")
+    #         elif account_2 not in Bank.accounts:
+    #             print("Transfer failed: Receiving account not found")
     #     timestamp = datetime.now()
     #     time_of_transfer = timestamp.strftime("%d/%m/%Y %H:%M:%S")
-    #     print(f"$X was deposited on: {time_of_transfer}")
-    #     pass 
+    #     print(f"$X was deposited on: {time_of_transfer}")         
 
-    def get_account_balance(self):
-        account_number = input("To check a balance, please enter the account number: ")
-        if account_number in Bank.accounts:
-            print(f"Account number {account_number} has a balance of {balance}")
-        else:
-            print("That account number does not exist")    
+        
 
 
 def execute_choice():
     new_client = Bank()
-    print(f"\nHello and welcome to The Bank!")
-
+    dash = "-" * 37
+    print()
+    print("$", dash, "$")
+    print(f"  Hello, Teller. The Bank welcomes you.")
+    print("$", dash, "$")
     
     while True:
         print("\nChoose from the following options:\n")
@@ -132,10 +139,7 @@ def execute_choice():
         try: 
             choice = int(input("\nPlease enter your choice (1-6): "))
             if choice == 1:
-                new_client.create_account()
-                # print(f"\nAccount number {account} created successfully")
-                # new_balance = float(input("How much would you like to deposit? $"))
-                # print(f"You have indicated you would like to deposit ${new_balance}")                
+                new_client.create_account()                              
             elif choice == 2:
                 print("Ok. Feed us money!")
                 new_client.deposit()             
@@ -147,6 +151,7 @@ def execute_choice():
                 new_client.get_account_balance()
             elif choice == 5:
                 print("It's fun to transfer funds!")
+                # new_client.transfer()
             elif choice == 6: 
                 print("Sorry to see you go. Have a great day!")
                 exit()
@@ -156,23 +161,3 @@ def execute_choice():
             print("Sorry, invalid choice. Let's try again.")
                                             
 execute_choice()
-
-
-
-
-# new_account = BankAccount(account_number=123456, balance=78.25)
-# new_account.display_account_details()
-# new_account.withdraw(balance=78.25, withdrawal_value=15.00)
-
-# output -->
-    # Your account number is 123456
-    # The balance for your account is $78.25
-    # Withdrawal in ammount of $15.0
-    # Updated balance: $63.25
-
-# def withdraw(self, balance, withdrawal_value):        
-    #     new_balance = balance - withdrawal_value        
-    #     print(f"Withdrawal in ammount of ${withdrawal_value}")
-    #     print(f"Updated balance: ${new_balance}")
-    #     # ask for value of withdrawal
-    #     # date/time stamp

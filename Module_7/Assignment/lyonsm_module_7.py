@@ -20,8 +20,11 @@ def generate_random_dataset(size):
     """ Function to generate a random dataset """
     return [random.randint(1, 1000000) for _ in range(size)] 
 
-# set the size of the dataset
-dataset = generate_random_dataset(900000)
+# set the size of the dataset:
+    # change the parameter to another value to test larger or 
+    # smaller datasets
+dataset = generate_random_dataset(2000)
+dataset_2 = dataset.copy()
 
 def insertion_sort(arr):
     """ Function to sort a randomized data set by implementing 
@@ -44,12 +47,13 @@ def insertion_sort(arr):
 start_time = datetime.now()
 insertion_sort_execution_time = timeit.timeit(lambda: insertion_sort(dataset), number = 1)
 end_time = datetime.now()
+# difference = end_time - start_time * 1000 
 
 # print the results
 print("\n--* Insertion Sort Results *--")
-print(f"\nInsertion Sort Beginning Timestamp: {start_time.timestamp()}")
-print(f"Insertion Sort took {insertion_sort_execution_time} seconds to run")
-print(f"Insertion Sort Ending Timestamp: {end_time.timestamp()}")
+print(f"\nInsertion Sort Beginning Timestamp: {start_time}")
+print(f"Insertion Sort Ending Timestamp: {end_time}")
+print(f"Insertion Sort Runtime (in seconds): {insertion_sort_execution_time}")
 
 def merge_sort(dataset):
     """ Function to sort a dataset by implementing the merge sort algorithm """
@@ -89,7 +93,7 @@ def merge(left_half, right_half):
 # set the start and end times, as well as measure the execution time based on
 # one set of data
 start_time = datetime.now()
-merge_sort_execution_time = timeit.timeit(lambda: merge_sort(dataset), number = 1)
+merge_sort_execution_time = timeit.timeit(lambda: merge_sort(dataset_2), number = 1)
 end_time = datetime.now()
 
 # print the results
@@ -98,15 +102,17 @@ print(f"\nMerge Sort Beginning Timestamp: {start_time.timestamp()}")
 print(f"Merge Sort took {merge_sort_execution_time} seconds to run")
 print(f"Merge Sort Ending Timestamp: {end_time.timestamp()}")
 
+def get_final_result():
+    """ Function to print a comparison of the sorting algorithms """
+    print("\n--* Comparison of Insertion Sort and Merge Sort *--")
+    print(f"\nThe dataset included {len(dataset)} randomly generated numbers.")    
+    if insertion_sort_execution_time == merge_sort_execution_time:
+        print("Result: Both Insertion Sort and Merge Sort are equally time efficient.")
+    elif insertion_sort_execution_time > merge_sort_execution_time:
+        print("Result: Insertion Sort is slower than Merge Sort.")
+    else:
+        print("Result: Insertion Sort is faster than Merge Sort.")
+
+
 if __name__ == "__main__":
-    def get_final_result():
-        """ Function to print a comparison of the sorting algorithms """
-        print("\n--* Comparison of Insertion Sort and Merge Sort *--")
-        print(f"\nThe dataset included {len(dataset)} randomly generated numbers.")    
-        if insertion_sort_execution_time == merge_sort_execution_time:
-            print("Result: Both Insertion Sort and Merge Sort are equally time efficient.")
-        elif insertion_sort_execution_time > merge_sort_execution_time:
-            print("Result: Insertion Sort is slower than Merge Sort.")
-        else:
-            print("Result: Insertion Sort is faster than Merge Sort.")
-get_final_result()
+    get_final_result()
