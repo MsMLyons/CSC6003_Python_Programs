@@ -80,7 +80,3 @@ Merge Sort Ending Timestamp: 1702216887.461857
 
 The dataset included 100000 randomly generated numbers.
 Result: Insertion Sort is slower than Merge Sort.
-
-__________________________________________________________
-
-Evaluation Example Output 4:

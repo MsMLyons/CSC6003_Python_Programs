@@ -21,7 +21,7 @@ def generate_random_dataset(size):
     return [random.randint(1, 1000000) for _ in range(size)] 
 
 # set the size of the dataset
-dataset = generate_random_dataset(1000000)
+dataset = generate_random_dataset(900000)
 
 def insertion_sort(arr):
     """ Function to sort a randomized data set by implementing 
