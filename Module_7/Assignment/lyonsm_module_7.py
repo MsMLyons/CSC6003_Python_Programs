@@ -12,18 +12,17 @@ a large, randomized, dataset. The sorting algorithms chosen
 for this comparison are insertion sort and merge sort.
 """
 import random
-import timeit
 from datetime import datetime
-
 
 def generate_random_dataset(size):
     """ Function to generate a random dataset """
     return [random.randint(1, 1000000) for _ in range(size)] 
 
-# set the size of the dataset:
-    # change the parameter to another value to test larger or 
-    # smaller datasets
-dataset = generate_random_dataset(2000)
+# set the size of the dataset for use in the insertion sort algorithm
+# note: change the parameter to another value to test larger or 
+# smaller datasets
+dataset = generate_random_dataset(100000)
+# create a copy of the dataset for use in the merge sort algorithm
 dataset_2 = dataset.copy()
 
 def insertion_sort(arr):
@@ -42,25 +41,19 @@ def insertion_sort(arr):
 
         arr[j + 1] = key
 
-# set the start and end times, as well as measure the execution time based on
-# one set of data
-start_time = datetime.now()
-insertion_sort_execution_time = timeit.timeit(lambda: insertion_sort(dataset), number = 1)
-end_time = datetime.now()
-# difference = end_time - start_time * 1000 
+def get_insertion_sort_results():
+    # print the results
+    print("\n--* Insertion Sort Results *--")
+    print(f"\nInsertion Sort Beginning Timestamp: {start_time_insertion_sort}")
+    print(f"Insertion Sort Ending Timestamp: {end_time_insertion_sort}")
+    print(f"Insertion Sort Runtime in Milliseconds: {insertion_sort_execution_time}")    
 
-# print the results
-print("\n--* Insertion Sort Results *--")
-print(f"\nInsertion Sort Beginning Timestamp: {start_time}")
-print(f"Insertion Sort Ending Timestamp: {end_time}")
-print(f"Insertion Sort Runtime (in seconds): {insertion_sort_execution_time}")
-
-def merge_sort(dataset):
+def merge_sort(dataset_2):
     """ Function to sort a dataset by implementing the merge sort algorithm """
-    if len(dataset) > 1:
-        mid = len(dataset) // 2
-        left_half = dataset[:mid]
-        right_half = dataset[mid:]
+    if len(dataset_2) > 1:
+        mid = len(dataset_2) // 2
+        left_half = dataset_2[:mid]
+        right_half = dataset_2[mid:]
 
         merge_sort(left_half)
         merge_sort(right_half)
@@ -90,22 +83,17 @@ def merge(left_half, right_half):
 
     return merged
 
-# set the start and end times, as well as measure the execution time based on
-# one set of data
-start_time = datetime.now()
-merge_sort_execution_time = timeit.timeit(lambda: merge_sort(dataset_2), number = 1)
-end_time = datetime.now()
-
-# print the results
-print("\n--* Merge Sort Results *--")
-print(f"\nMerge Sort Beginning Timestamp: {start_time.timestamp()}")
-print(f"Merge Sort took {merge_sort_execution_time} seconds to run")
-print(f"Merge Sort Ending Timestamp: {end_time.timestamp()}")
+def get_merge_sort_results():
+    # print the results
+    print("\n--* Merge Sort Results *--")
+    print(f"\nMerge Sort Beginning Timestamp: {start_time_merge_sort}")
+    print(f"Merge Sort Ending Timestamp: {end_time_merge_sort}")
+    print(f"Merge Sort Runtime in Milliseconds: {merge_sort_execution_time}")       
 
 def get_final_result():
     """ Function to print a comparison of the sorting algorithms """
     print("\n--* Comparison of Insertion Sort and Merge Sort *--")
-    print(f"\nThe dataset included {len(dataset)} randomly generated numbers.")    
+    print(f"\nThe dataset and its copy included {len(dataset)} randomly generated numbers.")    
     if insertion_sort_execution_time == merge_sort_execution_time:
         print("Result: Both Insertion Sort and Merge Sort are equally time efficient.")
     elif insertion_sort_execution_time > merge_sort_execution_time:
@@ -115,4 +103,17 @@ def get_final_result():
 
 
 if __name__ == "__main__":
+    # set the start and end times, as well as measure the execution time 
+    start_time_insertion_sort = datetime.now()
+    insertion_sort(dataset)
+    end_time_insertion_sort = datetime.now()
+    insertion_sort_execution_time = (end_time_insertion_sort - start_time_insertion_sort).total_seconds()
+
+    start_time_merge_sort = datetime.now()
+    merge_sort(dataset_2)
+    end_time_merge_sort = datetime.now()
+    merge_sort_execution_time = (end_time_merge_sort - start_time_merge_sort).total_seconds()
+
+    get_insertion_sort_results()
+    get_merge_sort_results()
     get_final_result()

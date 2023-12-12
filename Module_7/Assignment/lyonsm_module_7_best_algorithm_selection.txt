@@ -20,63 +20,57 @@ merges them once sorted. Insertion Sort is better for almost-sorted lists since 
 
 __________________________________________________________________________________________________________________
 
-Evaluation Example Output 1:
-
 --* Insertion Sort Results *--
 
-Insertion Sort Beginning Timestamp: 1702216083.702586
-Insertion Sort took 0.023106399923563004 seconds to run
-Insertion Sort Ending Timestamp: 1702216083.726579
+Insertion Sort Beginning Timestamp: 2023-12-11 23:42:45.890599
+Insertion Sort Ending Timestamp: 2023-12-11 23:42:45.912120
+Insertion Sort Runtime in Milliseconds: 0.021521
 
 --* Merge Sort Results *--
 
-Merge Sort Beginning Timestamp: 1702216083.727586
-Merge Sort took 0.0013693999499082565 seconds to run
-Merge Sort Ending Timestamp: 1702216083.728587
+Merge Sort Beginning Timestamp: 2023-12-11 23:42:45.912120
+Merge Sort Ending Timestamp: 2023-12-11 23:42:45.914119
+Merge Sort Runtime in Milliseconds: 0.001999
 
 --* Comparison of Insertion Sort and Merge Sort *--
 
-The dataset included 1000 randomly generated numbers.
+The dataset and its copy included 1000 randomly generated numbers.
 Result: Insertion Sort is slower than Merge Sort.
 
 __________________________________________________________
 
-Evaluation Example Output 2:
-
 --* Insertion Sort Results *--
 
-Insertion Sort Beginning Timestamp: 1702216539.015229
-Insertion Sort took 2.489890799857676 seconds to run
-Insertion Sort Ending Timestamp: 1702216541.506727
+Insertion Sort Beginning Timestamp: 2023-12-11 23:43:30.645567
+Insertion Sort Ending Timestamp: 2023-12-11 23:43:33.156395
+Insertion Sort Runtime in Milliseconds: 2.510828
 
 --* Merge Sort Results *--
 
-Merge Sort Beginning Timestamp: 1702216541.507777
-Merge Sort took 0.02097179996781051 seconds to run
-Merge Sort Ending Timestamp: 1702216541.529169
+Merge Sort Beginning Timestamp: 2023-12-11 23:43:33.156395
+Merge Sort Ending Timestamp: 2023-12-11 23:43:33.176810
+Merge Sort Runtime in Milliseconds: 0.020415
 
 --* Comparison of Insertion Sort and Merge Sort *--
 
-The dataset included 10000 randomly generated numbers.
+The dataset and its copy included 10000 randomly generated numbers.
 Result: Insertion Sort is slower than Merge Sort.
 
 __________________________________________________________
 
-Evaluation Example Output 3: 
-
 --* Insertion Sort Results *--
 
-Insertion Sort Beginning Timestamp: 1702216610.769122
-Insertion Sort took 276.4425627000164 seconds to run
-Insertion Sort Ending Timestamp: 1702216887.21364
+Insertion Sort Beginning Timestamp: 2023-12-11 23:43:54.510677
+Insertion Sort Ending Timestamp: 2023-12-11 23:48:39.174482
+Insertion Sort Runtime in Milliseconds: 284.663805
 
 --* Merge Sort Results *--
 
-Merge Sort Beginning Timestamp: 1702216887.214608
-Merge Sort took 0.24719529994763434 seconds to run
-Merge Sort Ending Timestamp: 1702216887.461857
+Merge Sort Beginning Timestamp: 2023-12-11 23:48:39.174482
+Merge Sort Ending Timestamp: 2023-12-11 23:48:39.431236
+Merge Sort Runtime in Milliseconds: 0.256754
 
 --* Comparison of Insertion Sort and Merge Sort *--
 
-The dataset included 100000 randomly generated numbers.
+The dataset and its copy included 100000 randomly generated numbers.
 Result: Insertion Sort is slower than Merge Sort.

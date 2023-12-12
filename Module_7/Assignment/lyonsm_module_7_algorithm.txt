@@ -22,36 +22,38 @@ Step 1: Generate a list of random numbers (dataset)
 3. Set the dataset size by creating a variable that calls the function
     - include the parameter (value) for the dataset size in the function 
       call
-Note: The size of the dataset can be manipulated by changing the value
-of the parameter in #3, above. Results reported in the "best algorithm
-selection" text document were tested on datasets of 1000, 10000, and 
-100000 randomly generated integers between 1 and 1000000.
+    Note: The size of the dataset can be manipulated by changing the value
+    of the parameter in #3, above. Results reported in the "best algorithm
+    selection" text document were tested on datasets of 1000, 10000, and 
+    100000 randomly generated integers between 1 and 1000000.
+4. Copy the dataset for use in the second sorting algorithm
 
 Step 2: Make use of the Insertion Sort algorithm from the module 7 slides
 1. The code for the algorithm can be found on slide 48
-2. Update the "number" variable to use the "dataset" variable to avoid 
-   hard-coded values 
-
-Step 3: Measure start, execution, and end times of the Insertion Sort algorithm
-1. Import the timeit and datetime modules
-2. Set the initializing timestamp using the start time variable 
-    - use datetime.now() to set the start time
-3. Set the execution time variable
-    - use timeit.timeit() to measure the execution time
-4. Set the ending time stamp using the end time variable
-    - use datetime.now() to set the end time
-5. Print the results of each timestamp and execution time measurement
+2. Make sure the algorithm references the dataset
+ 
+Step 3: Create a function to print the results of the Insertion Sort algorithm
+1. Include print statements for:
+    - section title
+    - beginning and ending timestamps
+    - algorithm runtime measured in milliseconds
+2. Repeat this step for the Merge Sort algorithm results
 
 Step 4: Make use of the Merge Sort algorithm from the module 7 slides
 1. The code for the algorithm can be found on slide 52
-2. Update the "numbers" variables to use the "dataset" variable to avoid 
-   hard-coded values
-3. Update the "arr" variable to also use the "dataset" variable so the
-   dataset can be split into subsets 
+2. Make sure the algorithm references dataset_2 
 
-Step 5: Measure the start, execution, and end times of the Merge Sort algorithm
-(see Step 3)
-
-Step 6: Compare the results of each algorithms' runtime
-1. Create a function to compare the runtime results of each algorithm
+Step 5: Create a function to get final results
+1. Compare the results of each algorithms' runtime
 2. Print the results
+    - include the size of the datasets
+    - include which algorithm performed more efficiently
+
+Step 6: Create program driver 
+1. Measure start, execution, and end times of each sorting algorithm
+    - make sure the datetime module has been imported
+    - set the initializing and ending timestamps  
+        - use datetime.now() to set the start and end times    
+    - find the difference between the start and end times
+        - convert the difference to milliseconds
+7. Call the get results functions to print the results related to each algorithm
