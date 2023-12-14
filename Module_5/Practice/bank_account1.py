@@ -20,3 +20,11 @@ my_account.withdraw(30)
 print(my_account.get_balance())
 
 # output --> 920 from ((450 + 500) - 30)
+
+
+
+# def display_account_details(self):
+    #     print(f"Your account number is {self.account_number}")
+    #     print(f"The balance for your account is ${self.balance}")
+    #     # more details?
+    #     pass 
