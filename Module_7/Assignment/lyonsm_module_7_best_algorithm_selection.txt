@@ -4,7 +4,7 @@ Author: Marki Lyons
 Course: Foundations in Programming Fall 2023
 Module: 7
 Date Created: 2023-12-09
-Date Updated: 2023-12-10
+Date Updated: 2023-12-12
 
 Description: The objective of this program is to compare 
 two sorting algorithms for their time efficiency in sorting 
@@ -14,7 +14,10 @@ for this comparison are insertion sort and merge sort.
 
 Evalutation Summary: 
 
-I compared the Insertion Sort and Merge Sort algorithms. Insertion Sort was always slower than Merge Sort. Merge 
+I compared the Insertion Sort and Merge Sort algorithms. Insertion Sort was always slower than Merge Sort. The
+larger the dataset, the more Merge Sort outperformed Insertion Sort. 
+
+Merge 
 sort has an advantage when sorting large, randomized datasets because it divides the dataset into subsets, then 
 merges them once sorted. Insertion Sort is better for almost-sorted lists since it moves one element at a time. 
 

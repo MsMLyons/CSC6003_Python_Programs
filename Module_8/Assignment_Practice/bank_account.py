@@ -17,6 +17,7 @@ balance, and displaying the account details.
 import datetime as datetime
 import random
 
+# Create a BankAccount class with the following attributes: account_number, balance
 class BankAccount:
     """ Class to assign an account number and to implement methods of
     depositing, withdrawing, checking balance, and displaying account 
@@ -25,84 +26,97 @@ class BankAccount:
 
     def __init__(self, account_number=None, balance=0.0):               
         self.account_number = int(account_number)
-        self.balance = float(balance)     
-        
-    # def display_account_details(self):
-    #     print(f"Your account number is {self.account_number}")
-    #     print(f"The balance for your account is ${self.balance}")
-    #     # more details?
-        
+        self.balance = float(balance)             
 
+# Create a Bank class that manages a list of bank accounts
 class Bank():
     """ Class to create an account with an initial balance input by the user,
     assigned to a unique account number, as well as allow for transactions.     
     """
 
-    def __init__(self):
+    def __init__(self, new_balance=0.0):
         self.account_numbers = set()
-        self.account_objects = set()               
+        self.account_objects = {}
+        self.new_balance = new_balance # created due to attribute error               
 
+    # create_account: Prompts the user to enter an initial balance and creates a new bank account 
+    # with a unique account number.
     def create_account(self):
         """ Take an account number as input and return the corresponding 
             BankAccount object from the list of accounts """ 
                         
-        new_balance = float(input("How much would you like to deposit? $"))
-        print(f"You have indicated you would like to deposit ${new_balance}")
+        new_balance = float(input("How much would you like to deposit? $"))        
         
         while True: 
-            num = random.randint(1000000, 100000000)
-            if num not in self.account_numbers:
-                self.account_numbers.add(num)
-                new_account = BankAccount(num, new_balance)
-                self.account_objects.add(new_account)                                         
+            account_number = random.randint(1000000, 100000000)
+            if account_number not in self.account_objects:
+                # self.account_numbers.add(account_number)
+                new_account = BankAccount(account_number, new_balance)
+                self.account_objects[account_number] = new_account               
                 
-                print(f"\nAccount number {num} created successfully")
+                print(f"\nAccount number {account_number} created successfully")
+                print(f"Balance: ${new_balance}")
+            # unit testing?
+            return new_account
         
+    # added to view set of accounts created (not in assignment instructions)        
+    def get_all_accounts(self):
+        print(f"This is a list of all of the accounts: {self.account_numbers}")
+        print(f"These are the account objects: {self.account_objects}")                  
+    
+    def get_account(self, account_number):
+        # account_number = int(input("Please enter your account number: "))
+        if account_number in self.account_objects:
+            return self.account_objects[account_number]
+        else: 
+            return False
 
-                # return num (maybe return new_account for unit testing)
-                
-    # retrieve accounts - move after create account
+    # get_account: Takes an account number as input and returns the corresponding BankAccount 
+    # object from the list of accounts.
     def get_account_balance(self):
-        account_number = input("To check a balance, please enter the account number: ")
-        if account_number in self.account_numbers:
-            print(f"Account number {self.account_number} has a balance of {self.balance}")
+        account_number = int(input("To check a balance, please enter the account number: "))
+        if account_number in self.account_objects:
+            # account = self.account_objects[account_number]
+            print(f"Account number {account_number} has a balance of {self.account_objects[account_number].balance}")
         else:
             print("That account number does not exist")     
     
     def deposit(self):
         """ Take an account number and amount as input and deposit the specified 
             amount into the account """
-        account_number = input("Please enter your account number: ")
-        if account_number in self.accounts:
-            amount = float(input("Please enter the amount you would like to deposit: $"))
-            # for account in self.account_objects:
-            #     if 
-            self.balance += amount
-            timestamp = datetime.now()
-            time_of_deposit = timestamp.strftime("%d/%m/%Y %H:%M:%S")
-            print(f"Thank you. ${amount} was deposited on: {time_of_deposit}")
+        account = self.get_account(int(input("Please enter your account number: ")))
+        if account:
+            amount = float(input("Please enter the amount you would like to deposit: $")) 
+            account.balance += amount
+            # timestamp = datetime.now()
+            # time_of_deposit = timestamp.strftime("%d/%m/%Y %H:%M:%S")
+            # print(f"Thank you. ${amount} was deposited on: {time_of_deposit}")
+            print(f"Thank you. Deposit of ${amount} received.")
         else: 
             print("Sorry, that account does not seem to exist.")        
 
     def withdraw(self):
-        account_number = input("Please enter your account number: ")
-        if account_number in Bank.accounts:
+        """ Take an account number and amount as input and withdraw the specified amount from 
+        the account. """
+        account_number = int(input("Please enter your account number: "))
+        if account_number in self.account_numbers:
             amount = float(input("Please enter the amount you would like to withdraw: $"))
-            if self.balance < amount:
+            if self.new_balance < amount:
                 print("Sorry, insufficient funds.")
             else:
-                self.balance -= amount
-                timestamp = datetime.now()
-                time_of_withdrawal = timestamp.strftime("%d/%m/%Y %H:%M:%S")
-                print(f"Thank you. ${amount} was deposited on: {time_of_withdrawal}")
+                self.new_balance -= amount
+                # timestamp = datetime.now()
+                # time_of_withdrawal = timestamp.strftime("%d/%m/%Y %H:%M:%S")
+                # print(f"Thank you. ${amount} was withdrawn on: {time_of_withdrawal}")
+                print(f"Thank you. ${amount} has been withdrawn.")
         else: 
             print("Sorry, that account does not seem to exist.")
 
     # def transfer(self):
     #     """ Take two account numbers and an amount as input and transfer the 
     #         specified amount from one account to another """
-    #     account_1 = input("Please enter the account number to transfer from: ")
-    #     account_2 = input("Please enter the account number to transfer to: ")
+    #     account_1 = int(input("Please enter the account number to transfer from: "))
+    #     account_2 = int(input("Please enter the account number to transfer to: "))
     #     if account_1 and account_2 in Bank.accounts:
     #         amount = float(input("Please enter the amount to transfer: $"))
     #         account_1_balance -= amount
@@ -117,10 +131,15 @@ class Bank():
     #     time_of_transfer = timestamp.strftime("%d/%m/%Y %H:%M:%S")
     #     print(f"$X was deposited on: {time_of_transfer}")         
 
-        
+    # def display_account_details(self):
+    #     print(f"Your account number is {self.account_number}")
+    #     print(f"The balance for your account is ${self.balance}")
+    #     # more details?
+    #     pass      
 
 
 def execute_choice():
+    """ Prompt the user for their choice and execute the corresponding operation """
     new_client = Bank()
     dash = "-" * 37
     print()
@@ -135,7 +154,9 @@ def execute_choice():
         print("[3] Withdraw Funds")
         print("[4] Check Balance")
         print("[5] Transfer Funds")
-        print("[6] Quit")
+        print("[6] Get All Accounts")
+        print("[7] Quit")
+        
         try: 
             choice = int(input("\nPlease enter your choice (1-6): "))
             if choice == 1:
@@ -151,10 +172,12 @@ def execute_choice():
                 new_client.get_account_balance()
             elif choice == 5:
                 print("It's fun to transfer funds!")
+            elif choice == 6:
+                new_client.get_all_accounts()
                 # new_client.transfer()
-            elif choice == 6: 
+            elif choice == 7: 
                 print("Sorry to see you go. Have a great day!")
-                exit()
+                exit()            
             else: 
                 print("Please choose a valid option.")
         except ValueError:

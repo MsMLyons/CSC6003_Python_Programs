@@ -4,7 +4,7 @@ Author: Marki Lyons
 Course: Foundations in Programming Fall 2023
 Module: 7
 Date Created: 2023-12-09
-Date Updated: 2023-12-10
+Date Updated: 2023-12-12
 
 Description: The objective of this program is to compare 
 two sorting algorithms for their time efficiency in sorting 
@@ -27,6 +27,8 @@ Step 1: Generate a list of random numbers (dataset)
     selection" text document were tested on datasets of 1000, 10000, and 
     100000 randomly generated integers between 1 and 1000000.
 4. Copy the dataset for use in the second sorting algorithm
+    - avoid using an already sorted dataset
+    - call dataset.copy() to create a separate, equal dataset
 
 Step 2: Make use of the Insertion Sort algorithm from the module 7 slides
 1. The code for the algorithm can be found on slide 48
@@ -37,7 +39,15 @@ Step 3: Create a function to print the results of the Insertion Sort algorithm
     - section title
     - beginning and ending timestamps
     - algorithm runtime measured in milliseconds
-2. Repeat this step for the Merge Sort algorithm results
+2. Measure start, execution, and end times of each sorting algorithm
+    - make sure the datetime module has been imported
+    - set the initializing and ending timestamps  
+        - use datetime.now() to set the start and end times    
+    - find the difference between the start and end times
+        - convert the difference to milliseconds
+3. Create a global variable to hold the difference in algorithm beginning and end
+    runtimes
+4. Repeat this step for the Merge Sort algorithm results
 
 Step 4: Make use of the Merge Sort algorithm from the module 7 slides
 1. The code for the algorithm can be found on slide 52
@@ -49,11 +59,5 @@ Step 5: Create a function to get final results
     - include the size of the datasets
     - include which algorithm performed more efficiently
 
-Step 6: Create program driver 
-1. Measure start, execution, and end times of each sorting algorithm
-    - make sure the datetime module has been imported
-    - set the initializing and ending timestamps  
-        - use datetime.now() to set the start and end times    
-    - find the difference between the start and end times
-        - convert the difference to milliseconds
-7. Call the get results functions to print the results related to each algorithm
+Step 6: Create main funciton 
+1. Call each of the results functions to print the results related to each algorithm
