@@ -1,0 +1,85 @@
+File: lyonsm_module_8_simplified.txt
+Author: Marki Lyons
+Course: Foundations in Programming Fall 2023
+Module: 8
+Date Created: 2023-11-25
+Date Updated: 2023-12-15
+
+Description: Bank management system that allows for the creation of bank accounts,
+as well as transactions such as deposits, withdrawals, and transfers. The program
+will also retrieve account details. Additionally, this program uses a while loop 
+to call the menu of possible actions by a presumed bank teller, Teller 1.
+"""
+Step 1 - imports
+1. import datetime for transaction timestamps (extra feature, not required)
+2. import random to generate random account numbers
+
+Step 2 - BankAccount class
+1. initialize the class with attributes for account numbers and balances 
+   assigned to bank accounts
+2. assign each attribute a beginning value
+   account number = None
+   balance = 0
+
+Step 3 - Bank class
+1. initialize with:
+   - a set to hold unique account numbers
+   - a dictionary to hold the account objects (account number, balance)
+   - initial deposit values when creating an account
+2. method to create a new account
+   - request initial deposit through user input
+   - use a while loop to assign a randomized, unique account number
+   - store the account number in the dictionary of account objects if it doesn't exist
+   - create a timestamp for use in the confirmation message
+   - create printed confirmation message(s)
+   - return the new account created for use in other methods
+3. method to get an account (helper method - not on menu)
+   - retrieves an account number from the account objects and returns it for use in
+     other methods
+4. method to retrieve all accounts
+   - retrieves all existing accounts
+   - prints a list of all accounts with their corresponding balances
+   - if no accounts exist, the user is alerted
+5. method to get an account balance
+   - takes in an account number as input
+   - prints the corresponding account balance
+   - if the account doesn't exist, the user is alerted
+6. method to deposit funds
+   - takes in an account number as input
+   - if the account exists, the user is asked how much to deposit
+   - the deposit amount is added to the account balance
+   - timestamp is created for use in confirmation message
+   - deposit confirmation message is printed
+   - if the account does not exist, the user is alerted and no transaction takes place
+7. method to withdraw funds
+   - very similar to the deposit method
+   - takes in an account number as input
+   - if the account exists, the user is asked how much to withdraw
+   - the withdrawal amount is subtracted from the account balance
+   - timestamp is created for use in confirmation message
+   - withdrawal confirmation message is printed
+   - if the account does not exist, the user is alerted and no transaction takes place
+8. method to transfer funds between accounts
+   - takes in two inputs, one for each account involved in the transfer
+   - if both accounts exist, user is prompted for value to transfer
+   - if the first account has insufficient funds, the transfer is denied
+   - otherwise, the value is subtracted from the first account and added to the second
+   - timestamp is created for use in the confirmation message
+   - transfer confirmation message is printed
+   - if either or both of the accounts does not exist, the user is alerted and no transaction 
+     takes place
+
+Step 3 - Execute choice function
+1. takes in the new_client Bank object (created in the main function)
+2. prompts the user to choose from a menu of account creation and transaction operations
+3. each menu item triggers the corresponding method to complete the chosen operation
+4. an extra option has been included to allow for retrieving a list of all accounts created
+   - this makes it easy to see which accounts can be transacted upon
+   - avoids scrolling through the output to find account numbers
+5. the user is alerted when an invalid option is chosen
+
+Step 5 - Main function
+1. prints a welcome message to the teller
+2. establishes the new client Bank object
+3. initializes the program with the execute choice function to prompt the teller for the initial
+   transaction
