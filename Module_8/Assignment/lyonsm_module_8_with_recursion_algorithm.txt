@@ -9,6 +9,15 @@ Description: Bank management system that allows for the creation of bank account
 as well as transactions such as deposits, withdrawals, and transfers. The program
 will also retrieve account details. Additionally, this program uses recursion to 
 call the menu of possible actions by a presumed bank teller, Teller 1.
+
+A note on why I'm submitting two versions of the assignment, one with the requested
+continue operation (recursive) function, and one with only the execute choice function:
+In my opinion, the simplified version, without the prompt to enter a yes or no to
+continue, is less annoying to the user. As I tested the output via the terminal, I
+consistently found that I tried to enter a menu number rather than yes or no when
+prompted. The simplified version uses a while loop to avoid the yes/no prompt and
+allow for a direct choice from the user. However, I see the virtue of both, thus I am
+submitting both versions for consideration.
 """
 Step 1 - imports
 1. import datetime for transaction timestamps (extra feature, not required)

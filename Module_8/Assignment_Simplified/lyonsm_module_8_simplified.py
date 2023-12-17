@@ -50,6 +50,14 @@ class Bank():
                 continue_message()            
             return new_account               
 
+    def get_account(self, account_number):
+        """ Helper method to return an account number for use in other methods """ 
+
+        if account_number in self.account_objects:
+            return self.account_objects[account_number]
+        else: 
+            return False
+    
     def get_all_accounts(self):
         """ Method to generate a list of all accounts and their corresponding balances """
 
@@ -66,14 +74,6 @@ class Bank():
             for account_number, account_object in self.account_objects.items():
                 print(f"\nAccount number: {account_number}, Balance: {account_object.balance:.2f}")                          
             continue_message()        
-
-    def get_account(self, account_number):
-        """ Helper method to return an account number for use in other methods """ 
-
-        if account_number in self.account_objects:
-            return self.account_objects[account_number]
-        else: 
-            return False
 
     def get_account_balance(self):
         """ Method to take an account number as input and verify the current balance """
@@ -151,7 +151,6 @@ class Bank():
                 print("\nSorry, transfer failed: Receiving account not found.")
             encouragement_message()         
 
-# (unnecessary) function to add message to the teller and a bit of fun to the program
 def continue_message():
     """ Function that prints a message to the teller, capitalistically 
         encouraging them to continue working """
@@ -163,7 +162,6 @@ def continue_message():
     print(f"{text.center(dash_length + 2)}")
     print(f"${dash}$")
 
-# (unnecessary) function to add a message to the teller and bit of fun to the program
 def encouragement_message():
     """ Function that prints a message to the teller to encourage them
         to keep working when an action fails """

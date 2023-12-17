@@ -9,6 +9,15 @@ Description: Bank management system that allows for the creation of bank account
 as well as transactions such as deposits, withdrawals, and transfers. The program
 will also retrieve account details. Additionally, this program uses a while loop 
 to call the menu of possible actions by a presumed bank teller, Teller 1.
+
+A note on why I'm submitting two versions of the assignment, one with the requested
+continue operation (recursive) function, and one with only the execute choice function:
+In my opinion, the simplified version, without the prompt to enter a yes or no to
+continue, is less annoying to the user. As I tested the output via the terminal, I
+consistently found that I tried to enter a menu number rather than yes or no when
+prompted. The simplified version uses a while loop to avoid the yes/no prompt and
+allow for a direct choice from the user. However, I see the virtue of both, thus I am
+submitting both versions for consideration.
 """
 Step 1 - imports
 1. import datetime for transaction timestamps (extra feature, not required)
@@ -69,7 +78,15 @@ Step 3 - Bank class
    - if either or both of the accounts does not exist, the user is alerted and no transaction 
      takes place
 
-Step 3 - Execute choice function
+Step 3 - Continue message function (not required)
+1. prints a stylized message to the teller to continue operations
+2. used throughout the program to print the message at the appropriate time
+
+Step 4 - Encouragement message function (not required)
+1. prints a stylized message to the teller to try another operation when something fails
+2. used throughout the program to print the message at the appropriate time
+
+Step 5 - Execute choice function
 1. takes in the new_client Bank object (created in the main function)
 2. prompts the user to choose from a menu of account creation and transaction operations
 3. each menu item triggers the corresponding method to complete the chosen operation
@@ -78,7 +95,7 @@ Step 3 - Execute choice function
    - avoids scrolling through the output to find account numbers
 5. the user is alerted when an invalid option is chosen
 
-Step 5 - Main function
+Step 6 - Main function
 1. prints a welcome message to the teller
 2. establishes the new client Bank object
 3. initializes the program with the execute choice function to prompt the teller for the initial
