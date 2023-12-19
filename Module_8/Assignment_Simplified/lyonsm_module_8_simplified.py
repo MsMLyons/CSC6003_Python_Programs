@@ -233,4 +233,6 @@ def main():
     print(f"{text.center(dash_length + 2)}")
     print(f"${dash}$")
     execute_choice(new_client)
-main()
+
+if __name__ =="__main__":
+    main()

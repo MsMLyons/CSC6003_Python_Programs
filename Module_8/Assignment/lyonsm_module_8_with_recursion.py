@@ -226,4 +226,6 @@ def main():
 
     new_client = Bank()
     execute_choice(new_client)
-main()
+
+if __name__ =="__main__":
+    main()
