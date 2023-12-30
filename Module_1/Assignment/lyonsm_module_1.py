@@ -11,14 +11,14 @@ as well as the volume of a sphere, based on user input of a radius.
 """
 import math
 
-radius = float(input("Please enter a radius: \n\n"))
+radius = float(input("Please enter a radius: "))
 print()
 
 if radius > 0: 
     def calc_circumference():
         """ Circumference Function """
         circumference = 2*math.pi*radius
-        circumference_txt = "The circumference of a circle with a radius of {:.3f} is {:.7} \n"
+        circumference_txt = "\nThe circumference of a circle with a radius of {:.3f} is {:.7} \n"
         print(circumference_txt.format(radius, circumference))        
 
     def calc_area():
