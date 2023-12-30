@@ -12,7 +12,7 @@ user is prompted to input a song title and an artist. They are
 then prompted to update and delete songs of their choosing.
 Finally, the program displays all songs entered by the user.
 """
-
+# needs a menu to allow for user selection of operations
 class Music_Collection:
     """ This class houses the functions that allow for the creation of a music collection """
     def __init__(self):
@@ -43,6 +43,9 @@ class Music_Collection:
             else: 
                 print(f"\nGreat song! {title.title()} is by {artist.title()}")
             return artist
+        elif response == "n":
+            print("\nOk. Come back later to add more songs. Goodbye!")
+            exit()
         else:
             print("\nSorry. Cannot retrieve a song without valid input.")
     
