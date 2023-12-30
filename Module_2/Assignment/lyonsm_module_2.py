@@ -37,5 +37,5 @@ def main():
     ''' Function to find and print the result of the is_evenly_divided function '''
     
     result = is_evenly_divided()
-    print(result)
+    print(f"Result: {result}")
 main()
