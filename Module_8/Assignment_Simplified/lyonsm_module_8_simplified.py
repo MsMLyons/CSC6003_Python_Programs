@@ -38,18 +38,21 @@ class Bank():
                         
         initial_deposit = float(input("\nHow much would you like to deposit? $"))        
         
-        while True: 
-            account_number = random.randint(1000000, 100000000)
-            if account_number not in self.account_objects:
-                self.account_numbers.add(account_number)                
-                new_account = BankAccount(account_number, initial_deposit)
-                self.account_objects[account_number] = new_account               
-                time_of_creation = datetime.datetime.now().strftime("%d/%m/%Y at %H:%M:%S")
-                print(f"\nAccount number {account_number} created successfully on {time_of_creation}.")
-                print(f"\nInitial balance: ${initial_deposit:.2f}")
-                continue_message()            
-            return new_account               
-
+        if initial_deposit > 0.0:
+            while True: 
+                account_number = random.randint(1000000, 100000000)
+                if account_number not in self.account_objects:
+                    self.account_numbers.add(account_number)                
+                    new_account = BankAccount(account_number, initial_deposit)
+                    self.account_objects[account_number] = new_account               
+                    time_of_creation = datetime.datetime.now().strftime("%d/%m/%Y at %H:%M:%S")
+                    print(f"\nAccount number {account_number} created successfully on {time_of_creation}.")
+                    print(f"\nInitial balance: ${initial_deposit:.2f}")
+                    continue_message()            
+                return new_account               
+        else:
+            print("\nInvalid deposit amount. Please try again.")
+            
     def get_account(self, account_number):
         """ Helper method to return an account number for use in other methods """ 
 

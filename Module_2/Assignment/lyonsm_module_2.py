@@ -11,7 +11,7 @@ positive integers and returns True if either
 evenly divides the other. If neither value
 evenly divides the other, or the user enters
 a negative number, the program continues to
-prompt the user for new values. 
+prompt the user for positive integer values. 
 
 """
 def is_evenly_divided():
